@@ -1,601 +1,698 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior: smooth;">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Compendium: Upper GIT Anatomy</title>
+    <title>Anatomy eBook: Small & Large Intestine</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F6F7F9; /* Gray-100 */
+            background-color: #f8fafc; /* Tailwind gray-50 */
         }
-        .academic-text {
-            color: #1F2937; /* Gray-800 */
-        }
-        .academic-title {
-            color: #1F2937; /* Gray-900 */
-        }
-        .main-header {
-            color: #0B5FFF; /* Blue-600 */
-        }
-        .sub-header {
-            color: #FF6B6B; /* Coral-500 */
-        }
-        .arabic-clarification {
+        .font-cairo {
             font-family: 'Cairo', sans-serif;
-            color: #0B5FFF; /* Blue-600 */
-            font-style: italic;
-            background-color: #EFF6FF; /* Blue-50 */
-            border-left: 4px solid #0B5FFF;
-            padding: 8px 12px;
-            margin-top: 8px;
-            border-radius: 4px;
         }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+        }
+        /* Custom styles for Dr. Ninyawe theme */
+        .dr-header {
+            border-bottom: 4px solid #0369a1; /* sky-700 */
+        }
+        .dr-title {
+            color: #0c4a6e; /* sky-900 */
+        }
+        .dr-subtitle {
+            color: #075985; /* sky-800 */
+        }
+        .dr-summary {
+            background-color: #f0f9ff; /* sky-50 */
+            border-left: 4px solid #0ea5e9; /* sky-500 */
+            color: #0369a1; /* sky-700 */
+        }
+        .dr-summary-title {
+            color: #075985; /* sky-800 */
+            font-weight: 700;
+        }
+        .dr-clinical-case {
+            background-color: #fffbeb; /* amber-50 */
+            border: 1px solid #fde68a; /* amber-200 */
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        .dr-clinical-header {
+            background-color: #fef3c7; /* amber-100 */
+            border-bottom: 1px solid #fde68a; /* amber-200 */
+            padding: 0.75rem 1.25rem;
+        }
+        .dr-clinical-title {
+            color: #b45309; /* amber-700 */
+            font-weight: 700;
+        }
+        .dr-clinical-body {
+            padding: 1.25rem;
+        }
+        .dr-arabic {
+            color: #0369a1; /* sky-700 */
+            font-family: 'Cairo', sans-serif;
+            font-weight: 400;
+            font-size: 0.95em;
+        }
+        /* Collapsible sections */
         details > summary {
             cursor: pointer;
-            padding: 16px;
+            padding: 0.75rem 1rem;
             background-color: #ffffff;
-            border: 1px solid #E5E7EB; /* Gray-200 */
+            border: 1px solid #e5e7eb; /* gray-200 */
             border-radius: 8px;
+            font-size: 1.25rem;
             font-weight: 600;
-            font-size: 1.125rem; /* text-lg */
-            margin-top: 12px;
-            transition: background-color 0.2s ease;
+            color: #0c4a6e; /* sky-900 */
+            transition: background-color 0.2s;
         }
         details > summary:hover {
-            background-color: #F9FAFB; /* Gray-50 */
+            background-color: #f0f9ff; /* sky-50 */
         }
         details[open] > summary {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
-            background-color: #F9FAFB; /* Gray-50 */
+            background-color: #e0f2fe; /* sky-100 */
         }
         .details-content {
-            padding: 20px;
-            border: 1px solid #E5E7EB; /* Gray-200 */
-            border-top: none;
+            padding: 1.5rem;
+            border: 1px solid #e5e7eb; /* gray-200 */
+            border-top: 0;
             border-bottom-left-radius: 8px;
             border-bottom-right-radius: 8px;
             background-color: #ffffff;
         }
+        /* Table styling */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 16px;
-            margin-bottom: 16px;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
         }
         th, td {
-            border: 1px solid #D1D5DB; /* Gray-300 */
-            padding: 10px 12px;
+            border: 1px solid #d1d5db; /* gray-300 */
+            padding: 0.75rem;
             text-align: left;
-            vertical-align: top;
         }
         th {
-            background-color: #F3F4F6; /* Gray-100 */
+            background-color: #f3f4f6; /* gray-100 */
             font-weight: 600;
         }
-        tr:nth-child(even) {
-            background-color: #F9FAFB; /* Gray-50 */
-        }
-        .case-section {
-            margin-top: 12px;
-            padding-bottom: 8px;
-        }
-        .case-label {
-            font-weight: 600;
-            color: #1F2937; /* Gray-800 */
-            width: 100px;
-            display: inline-block;
-        }
-        .case-content {
-            display: inline;
-        }
-        .placeholder-img {
-            width: 100%;
-            max-width: 600px;
-            margin: 16px auto;
-            border-radius: 8px;
-            border: 1px solid #E5E7EB;
+        tbody tr:nth-child(odd) {
+            background-color: #f9fafb; /* gray-50 */
         }
     </style>
 </head>
-<body class="academic-text">
+<body class="bg-gray-50 text-gray-800">
 
-    <div class="max-w-5xl mx-auto p-4 md:p-8 lg:p-12">
-        
-        <!-- === EBOOK COVER & TITLE === -->
-        <header style="text-align: center; border-bottom: 2px solid #FF6B6B; padding-bottom: 15px;">
-            <h1 class="text-3xl md:text-4xl font-bold academic-title m-0">Anatomy of the Upper Alimentary Tract</h1>
-            <p class="text-xl md:text-2xl font-semibold main-header mt-2">Doctor NINyawe Academic Compendium</p>
-            <p class="text-md text-gray-500 mt-2">Based on Lecture by: Eman EL-sherif | Module: Gastrointestinal System (GIT)</p>
+    <!-- Main Container -->
+    <div class="container mx-auto max-w-5xl p-4 sm:p-8">
+
+        <!-- Header -->
+        <header class="dr-header pb-6 mb-8">
+            <h1 class="text-4xl font-bold dr-title">Anatomy of the Small & Large Intestine</h1>
+            <p class="text-xl dr-subtitle mt-2">An Interactive eBook by Doctor NINyawe Model</p>
+            <p class="text-sm text-gray-600 mt-1">Based on lecture by Eman EL-Sherif</p>
         </header>
 
-        <!-- === TABLE OF CONTENTS === -->
-        <nav class="my-8 p-6 bg-white rounded-lg shadow">
-            <h2 class="text-2xl font-bold academic-title border-b pb-2">🧭 Dynamic Table of Contents</h2>
-            <ul class="mt-4 space-y-2">
-                <li><a href="#stage1" class="text-lg font-semibold text-blue-600 hover:text-blue-800 hover:underline">📘 1.0 Full Academic Reconstruction (#Stage_Academic)</a></li>
-                <ul class="ml-6 space-y-1 mt-1">
-                    <li><a href="#s1-oral" class="text-gray-700 hover:text-black hover:underline">1.1 The Oral Cavity</a></li>
-                    <li><a href="#s1-pharynx" class="text-gray-700 hover:text-black hover:underline">1.2 The Pharynx</a></li>
-                    <li><a href="#s1-esophagus" class="text-gray-700 hover:text-black hover:underline">1.3 The Esophagus</a></li>
-                    <li><a href="#s1-stomach" class="text-gray-700 hover:text-black hover:underline">1.4 The Stomach</a></li>
-                </ul>
-                <li><a href="#stage2" class="text-lg font-semibold text-blue-600 hover:text-blue-800 hover:underline">🧠 2.0 Condensed Memory File (#Stage_Memory)</a></li>
-                <li><a href="#stage3" class="text-lg font-semibold text-blue-600 hover:text-blue-800 hover:underline">🩺 3.0 Clinical Application Layer (#Stage_Clinical)</a></li>
+        <!-- Table of Contents -->
+        <nav class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold dr-title mb-4">Table of Contents</h2>
+            <ul class="space-y-2">
+                <li><a href="#academic" class="text-lg text-sky-700 hover:underline font-semibold">I. Academic Reconstruction (Full Lecture)</a></li>
+                <li><a href="#memory" class="text-lg text-sky-700 hover:underline font-semibold">II. Memory Compression (High-Yield Summary)</a></li>
+                <li><a href="#clinical" class="text-lg text-sky-700 hover:underline font-semibold">III. Clinical Application (Patient Cases)</a></li>
             </ul>
         </nav>
 
-        <!-- === STAGE 1: ACADEMIC RECONSTRUCTION === -->
-        <section id="stage1" class="my-8">
-            <h2 class="text-3xl font-bold academic-title border-b-2 border-gray-300 pb-2">📘 1.0 Full Academic Reconstruction (#Stage_Academic)</h2>
-            <p class="mt-2 text-lg text-gray-600">This section provides the complete, textbook-style breakdown of the lecture content.</p>
+        <!-- Spacer -->
+        <hr class="my-12 border-gray-300">
 
-            <details id="s1-oral" class="mt-4">
-                <summary>1.1 The Oral Cavity (الفم)</summary>
+        <!-- 
+            ==================================================
+            SECTION 1: ACADEMIC RECONSTRUCTION
+            ================================================== 
+        -->
+        <section id="academic" class="mb-12">
+            <h2 class="text-3xl font-bold dr-title mb-6">I. Academic Reconstruction (Full Lecture)</h2>
+
+            <details class="mb-6" open>
+                <summary>🎯 Lecture Objectives & Overview</summary>
                 <div class="details-content space-y-4">
-                    <p>The oral cavity extends from the <strong>oral fissure</strong> (lips) anteriorly to the <strong>oropharyngeal isthmus</strong> (opening to oropharynx) posteriorly. It is divided by the dental arches into the <strong>Vestibule</strong> and the <strong>Mouth Cavity Proper</strong>.</p>
-                    <img src="https://placehold.co/800x400/EBF8FF/0B5FFF?text=Divisions+of+the+Oral+Cavity" alt="Divisions of the Oral Cavity" class="placeholder-img" onerror="this.src='https://placehold.co/800x400/EBF8FF/0B5FFF?text=Image+Placeholder'">
-                    
-                    <h4 class="text-xl font-semibold academic-title">The Vestibule</h4>
-                    <ul class="list-disc list-outside ml-6 space-y-1">
-                        <li><strong>Location:</strong> Space between lips/cheeks (externally) and gums/teeth (internally).</li>
-                        <li><strong>Lateral Wall:</strong> Formed by the <strong>Buccinator muscle</strong>.</li>
-                        <li><strong>Clinical Note:</strong> The <strong>parotid salivary gland duct</strong> opens opposite the upper 2nd molar tooth.</li>
+                    <h3 class="text-xl font-semibold dr-subtitle">Lecture Objectives</h3>
+                    <ul class="list-decimal list-inside space-y-1">
+                        <li>Describe the anatomy of the <strong>small intestine</strong> (duodenum, jejunum & ileum).</li>
+                        <li>Describe the anatomy of the <strong>large intestine</strong> (caecum, appendix, colon).</li>
+                        <li>Describe the anatomy of the <strong>rectum</strong>.</li>
                     </ul>
 
-                    <h4 class="text-xl font-semibold academic-title">The Mouth Proper</h4>
-                    <ul class="list-disc list-outside ml-6 space-y-1">
-                        <li><strong>Roof:</strong> Hard palate (anterior) and Soft palate (posterior).</li>
-                        <li><strong>Floor:</strong> Anterior 2/3 of the tongue, Mylohyoid muscle, Sublingual gland, and Submandibular gland.</li>
-                    </ul>
-
-                    <h4 class="text-xl font-semibold academic-title">The Palate (Roof)</h4>
-                    <p><strong>1. Hard Palate:</strong> Bony anterior part. Formed by the <strong>maxilla</strong> and <strong>palatine bones</strong>.</p>
-                    <p><strong>2. Soft Palate:</strong> Mobile, muscular posterior flap, ending in the uvula.</p>
-
-                    <h5 class="text-lg font-semibold academic-title mt-4">Muscles of the Soft Palate</h5>
-                    <div class="overflow-x-auto">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Muscle</th>
-                                    <th>Origin</th>
-                                    <th>Insertion</th>
-                                    <th>Nerve Supply</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Tensor Veli Palatini</strong></td>
-                                    <td>Spine of sphenoid, auditory tube</td>
-                                    <td>Palatine aponeurosis</td>
-                                    <td><strong>Mandibular N. (V3)</strong></td>
-                                    <td><strong>Tenses</strong> soft palate</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Levator Veli Palatini</strong></td>
-                                    <td>Petrous temporal bone, auditory tube</td>
-                                    <td>Palatine aponeurosis</td>
-                                    <td>Pharyngeal Plexus (X)</td>
-                                    <td><strong>Elevates</strong> soft palate</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Palatopharyngeus</strong></td>
-                                    <td>Palatine aponeurosis</td>
-                                    <td>Thyroid cartilage, pharynx wall</td>
-                                    <td>Pharyngeal Plexus (X)</td>
-                                    <td>Elevates pharynx</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Palatoglossus</strong></td>
-                                    <td>Palatine aponeurosis</td>
-                                    <td>Tongue</td>
-                                    <td>Pharyngeal Plexus (X)</td>
-                                    <td>Elevates posterior tongue</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Musculus Uvulae</strong></td>
-                                    <td>Posterior nasal spine</td>
-                                    <td>Mucosa of uvula</td>
-                                    <td>Pharyngeal Plexus (X)</td>
-                                    <td>Shortens uvula</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="arabic-clarification">
-                        (الشرح بالعربي): العضلة المميزة هي <strong>Tensor palati</strong> لأنها الوحيدة التي يغذيها <strong>Mandibular N. (V3)</strong>. باقي العضلات يغذيها <strong>Pharyngeal Plexus (Vagus)</strong>.
-                    </div>
-
-                    <h5 class="text-lg font-semibold academic-title mt-4">Innervation & Blood Supply (Soft Palate)</h5>
-                    <ul class="list-disc list-outside ml-6 space-y-1">
-                        <li><strong>Motor:</strong> Pharyngeal Plexus (CN X), <em>except</em> Tensor Veli Palatini (CN V3).</li>
-                        <li><strong>Sensory:</strong> Greater/Lesser palatine N. & Nasopalatine N. (all from Maxillary N. - V2).</li>
-                        <li><strong>Arterial Supply:</strong> Greater palatine a., Ascending palatine a., Ascending pharyngeal a.</li>
-                    </ul>
-
-                    <h4 class="text-xl font-semibold academic-title mt-6">The Tongue (اللسان)</h4>
-                    <p>A muscular structure covered by mucous membrane.</p>
-                    
-                    <h5 class="text-lg font-semibold academic-title mt-4">Parts & Surfaces</h5>
-                    <ul class="list-disc list-outside ml-6 space-y-1">
-                        <li><strong>Division:</strong> Divided by the V-shaped <strong>Sulcus Terminalis</strong> into <strong>Anterior 2/3</strong> (Oral part) and <strong>Posterior 1/3</strong> (Pharyngeal part).</li>
-                        <li><strong>Foramen Cecum:</strong> A pit at the apex of the sulcus, remnant of the thyroglossal duct.</li>
-                        <li><strong>Dorsum (Anterior 2/3):</strong> Covered in papillae:
-                            <ul class="list-circle list-outside ml-6 mt-1">
-                                <li><strong>Filiform:</strong> Cone-shaped, <em>no taste buds</em>.</li>
-                                <li><strong>Fungiform:</strong> Round, <em>has taste buds</em>.</li>
-                                <li><strong>Vallate:</strong> 8-12 large, V-shaped, <em>has taste buds</em>.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Dorsum (Posterior 1/3):</strong> No papillae. Contains the <strong>Lingual Tonsil</strong>.</li>
-                        <li><strong>Inferior Surface:</strong> Thin mucosa, shows deep lingual veins. Connected to the floor by the <strong>Frenulum Linguae</strong>.</li>
-                    </ul>
-
-                    <h5 class="text-lg font-semibold academic-title mt-4">Muscles of the Tongue</h5>
-                    <p>All supplied by <strong>Hypoglossal N. (CN XII)</strong> <em>except</em> Palatoglossus.</p>
-                    <ul class="list-disc list-outside ml-6 space-y-1">
-                        <li><strong>Intrinsic (Change Shape):</strong> Superior/Inferior longitudinal, Transverse, Vertical.</li>
-                        <li><strong>Extrinsic (Produce Movement):</strong> Genioglossus (protrudes), Hyoglossus (depresses), Styloglossus (retracts/elevates), <strong>Palatoglossus</strong> (elevates posterior tongue; <em>Nerve: Pharyngeal Plexus - CN X</em>).</li>
-                    </ul>
-
-                    <h5 class="text-lg font-semibold academic-title mt-4">Nerve Supply of the Tongue (Summary Table)</h5>
-                    <div class="overflow-x-auto">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Region</th>
-                                    <th>Modality</th>
-                                    <th>Nerve</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Anterior 2/3</strong></td>
-                                    <td><strong>General Sensation</strong></td>
-                                    <td><strong>Lingual N. (V3)</strong></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Anterior 2/3</strong></td>
-                                    <td><strong>Special Sensation (Taste)</strong></td>
-                                    <td><strong>Chorda Tympani (CN VII)</strong></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Posterior 1/3</strong></td>
-                                    <td><strong>General & Taste Sensation</strong></td>
-                                    <td><strong>Glossopharyngeal N. (CN IX)</strong></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>All Muscles</strong></td>
-                                    <td><strong>Motor</strong></td>
-                                    <td><strong>Hypoglossal N. (CN XII)</strong></td>
-                                </tr>
-                                <tr>
-                                    <td><em>Exception (Motor)</em></td>
-                                    <td>Palatoglossus m.</td>
-                                    <td><strong>Vagus N. (CN X)</strong></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </details>
-
-            <details id="s1-pharynx" class="mt-4">
-                <summary>1.2 The Pharynx (البلعوم)</summary>
-                <div class="details-content space-y-4">
-                    <p>A 25cm fibromuscular tube for air and food.</p>
-                    <img src="https://placehold.co/800x400/EBF8FF/0B5FFF?text=Divisions+of+the+Pharynx" alt="Divisions of the Pharynx" class="placeholder-img" onerror="this.src='https://placehold.co/800x400/EBF8FF/0B5FFF?text=Image+Placeholder'">
-                    
-                    <h4 class="text-xl font-semibold academic-title">Wall & Muscles</h4>
-                    <ul class="list-disc list-outside ml-6 space-y-1">
-                        <li><strong>Wall Layers (Inside-Out):</strong> Mucosa $\rightarrow$ Pharyngobasilar Fascia $\rightarrow$ Muscles $\rightarrow$ Buccopharyngeal Fascia.</li>
-                        <li><strong>Muscles (Outer Circular Constrictors):</strong> Superior, Middle, Inferior.</li>
-                        <li><strong>Muscles (Inner Longitudinal Elevators):</strong> Palatopharyngeus, Salpingopharyngeus, Stylopharyngeus.</li>
-                    </ul>
-
-                    <h4 class="text-xl font-semibold academic-title mt-6">Divisions of the Pharynx</h4>
-                    <ol class="list-decimal list-outside ml-6 space-y-2">
-                        <li><strong>Nasopharynx:</strong> (Base of skull to soft palate).
-                            <br>Features: <strong>Pharyngeal Tonsil (Adenoids)</strong> and <strong>Eustachian Tube Opening</strong>.</li>
-                        <li><strong>Oropharynx:</strong> (Soft palate to epiglottis).
-                            <br>Features: <strong>Palatine Tonsils</strong> (in tonsillar fossa) and <strong>Lingual Tonsil</strong>.</li>
-                        <li><strong>Laryngopharynx:</strong> (Epiglottis to cricoid cartilage C6).
-                            <br>Features: Laryngeal inlet and <strong>Piriform Fossae</strong>.</li>
-                    </ol>
-
-                    <h4 class="text-xl font-semibold academic-title mt-6">Neurovascular Supply of the Pharynx</h4>
-                    <ul class="list-disc list-outside ml-6 space-y-1">
-                        <li><strong>Motor Nerves:</strong> All muscles by <strong>Vagus N. (CN X)</strong> <em>EXCEPT</em> <strong>Stylopharyngeus</strong> (by <strong>Glossopharyngeal N. - CN IX</strong>).</li>
-                        <li><strong>Sensory Nerves:</strong> <strong>Pharyngeal Plexus</strong> (formed by CN IX for sensory, CN X for motor).</li>
-                    </ul>
-                </div>
-            </details>
-
-            <details id="s1-esophagus" class="mt-4">
-                <summary>1.3 The Esophagus (المريء)</summary>
-                <div class="details-content space-y-4">
-                    <p>A 25cm fibromuscular tube from pharynx to stomach.</p>
-                    <ul class="list-disc list-outside ml-6 space-y-1">
-                        <li><strong>Course:</strong> Begins at <strong>C6</strong> (cricoid cartilage), passes through diaphragm at <strong>T10</strong> (esophageal hiatus), ends at <strong>T11</strong> (cardiac orifice).</li>
-                        <li><strong>Parts:</strong> Cervical (in neck), Thoracic (in mediastinum), Abdominal (short, ~1.25 cm).</li>
-                        <li><strong>Key Relations:</strong> Posterior to trachea, posterior to the <strong>left atrium</strong>.</li>
-                    </ul>
-
-                    <h4 class="text-xl font-semibold academic-title mt-6">Esophageal Constrictions</h4>
-                    <p>Four key anatomical narrowing points.</p>
-                    <img src="https://placehold.co/800x400/EBF8FF/0B5FFF?text=Esophageal+Constrictions" alt="Esophageal Constrictions" class="placeholder-img" onerror="this.src='https://placehold.co/800x400/EBF8FF/0B5FFF?text=Image+Placeholder'">
-                    <div class="overflow-x-auto">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Constriction</th>
-                                    <th>Location</th>
-                                    <th>Vertebral Level</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>1st (Narrowest)</strong></td>
-                                    <td>Pharyngoesophageal junction</td>
-                                    <td><strong>C6</strong></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>2nd</strong></td>
-                                    <td>Crossed by Arch of Aorta</td>
-                                    <td><strong>T3</strong></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>3rd</strong></td>
-                                    <td>Crossed by Left Main Bronchus</td>
-                                    <td><strong>T6</strong></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>4th</strong></td>
-                                    <td>Esophageal Hiatus (Diaphragm)</td>
-                                    <td><strong>T10</strong></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h4 class="text-xl font-semibold academic-title mt-6">Neurovascular Supply (Segmental)</h4>
-                    <ul class="list-disc list-outside ml-6 space-y-1">
-                        <li><strong>Arterial:</strong> Cervical (Inferior Thyroid a.), Thoracic (Thoracic Aorta), Abdominal (Left Gastric a.).</li>
-                        <li><strong>Venous:</strong> Cervical (Inferior Thyroid v.), Thoracic (Azygos & Hemiazygos v.), Abdominal (<strong>Left Gastric v. [Portal]</strong> & Hemiazygos v. [Systemic]).</li>
-                        <li><strong>Clinical (Porto-Systemic Anastomosis):</strong> The abdominal esophageal veins connect the portal and systemic systems. In liver disease (portal hypertension), blood backs up into the Left Gastric Vein, causing <strong>esophageal varices</strong>.</li>
-                        <li><strong>Nerve:</strong> Esophageal Plexus (Vagus + Sympathetic). Forms <strong>Anterior (Left) Vagal Trunk</strong> and <strong>Posterior (Right) Vagal Trunk</strong>.</li>
-                    </ul>
-                </div>
-            </details>
-
-            <details id="s1-stomach" class="mt-4">
-                <summary>1.4 The Stomach (المعدة)</summary>
-                <div class="details-content space-y-4">
-                    <p>The widest part of the alimentary tract, acting as a food reservoir.</p>
-                    <img src="https://placehold.co/800x400/EBF8FF/0B5FFF?text=Anatomy+of+the+Stomach" alt="Anatomy of the Stomach" class="placeholder-img" onerror="this.src='https://placehold.co/800x400/EBF8FF/0B5FFF?text=Image+Placeholder'">
-
-                    <h4 class="text-xl font-semibold academic-title">External Features & Parts</h4>
-                    <ul class="list-disc list-outside ml-6 space-y-1">
-                        <li><strong>Openings:</strong> Cardiac orifice (esophagus), Pyloric orifice (duodenum).</li>
-                        <li><strong>Curvatures:</strong> Lesser (right border) and Greater (left border).</li>
-                        <li><strong>Parts:</strong> <strong>Fundus</strong> (dome), <strong>Body</strong> (main part), <strong>Pylorus</strong> (pyloric antrum + canal).</li>
-                    </ul>
-
-                    <h4 class="text-xl font-semibold academic-title mt-6">Openings & Sphincters</h4>
-                    <ol class="list-decimal list-outside ml-6 space-y-2">
-                        <li><strong>Cardiac Orifice:</strong> A <strong>physiologic sphincter</strong> (no true muscle). Reflux is prevented by the diaphragmatic crus, acute angle, and mucosal folds.</li>
-                        <li><strong>Pyloric Orifice:</strong> A true <strong>anatomic and physiologic sphincter</strong> (thickened circular muscle).</li>
-                    </ol>
-
-                    <h4 class="text-xl font-semibold academic-title mt-6">Wall of the Stomach</h4>
-                    <ul class="list-disc list-outside ml-6 space-y-1">
-                        <li><strong>Mucosa:</strong> Has folds called <strong>Rugae</strong> when empty, which flatten when distended.</li>
-                        <li><strong>Musculosa:</strong> Unique <strong>3 layers</strong>: Outer Longitudinal, Middle Circular, <strong>Inner Oblique</strong>.</li>
-                    </ul>
-
-                    <h4 class="text-xl font-semibold academic-title mt-6">Relations of the Stomach</h4>
-                    <ul class="list-disc list-outside ml-6 space-y-1">
-                        <li><strong>Anterior:</strong> Left lobe of liver, diaphragm, anterior abdominal wall.</li>
-                        <li><strong>Posterior (The "Stomach Bed"):</strong> Structures the stomach rests on (separated by lesser sac):
-                            <ul class="list-circle list-outside ml-6 mt-1">
-                                <li><strong>Vertical:</strong> Diaphragm, Spleen, Left Suprarenal Gland, Left Kidney.</li>
-                                <li><strong>Horizontal:</strong> Splenic Artery, Pancreas, Transverse Mesocolon, Transverse Colon.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <img src="https://placehold.co/800x400/EBF8FF/0B5FFF?text=Stomach+Bed+Relations" alt="Stomach Bed Relations" class="placeholder-img" onerror="this.src='https://placehold.co/800x400/EBF8FF/0B5FFF?text=Image+Placeholder'">
-
-                    <h4 class="text-xl font-semibold academic-title mt-6">Arterial Supply (from Celiac Trunk)</h4>
-                    <p>The stomach has a rich, anastomotic blood supply.</p>
-                    <div class="overflow-x-auto">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Artery</th>
-                                    <th>Origin</th>
-                                    <th>Supplies</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Left Gastric a.</strong></td>
-                                    <td>Celiac Trunk</td>
-                                    <td>Upper Lesser Curvature</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Right Gastric a.</strong></td>
-                                    <td>Hepatic a.</td>
-                                    <td>Lower Lesser Curvature</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Short Gastric aa.</strong></td>
-                                    <td>Splenic a.</td>
-                                    <td><strong>Fundus</strong></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Left Gastroepiploic a.</strong></td>
-                                    <td>Splenic a.</td>
-                                    <td>Upper Greater Curvature</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Right Gastroepiploic a.</strong></td>
-                                    <td>Gastroduodenal a.</td>
-                                    <td>Lower Greater Curvature</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h4 class="text-xl font-semibold academic-title mt-6">Venous & Lymphatic Drainage</h4>
-                    <ul class="list-disc list-outside ml-6 space-y-1">
-                        <li><strong>Veins:</strong> All drain to the <strong>Portal Circulation</strong> (Portal, Splenic, or Superior Mesenteric Veins).</li>
-                        <li><strong>Lymph:</strong> All lymph <em>ultimately</em> drains to the <strong>Celiac Nodes</strong>.</li>
-                    </ul>
-                </div>
-            </details>
-
-        </section>
-
-        <!-- === STAGE 2: MEMORY FILE === -->
-        <section id="stage2" class="my-8">
-            <h2 class="text-3xl font-bold academic-title border-b-2 border-gray-300 pb-2">🧠 2.0 Condensed Memory File (#Stage_Memory)</h2>
-            <p class="mt-2 text-lg text-gray-600">High-yield concepts and mnemonics for rapid review.</p>
-
-            <details class="mt-4">
-                <summary>⚡️ Quick Recall: Soft Palate & Pharynx Nerves</summary>
-                <div class="details-content space-y-3">
-                    <p><strong>Soft Palate Motor:</strong>
-                        <br>All muscles by <strong>Pharyngeal Plexus (CN X)</strong>...
-                        <br><em>EXCEPT</em> <strong>Tensor Veli Palatini</strong> $\rightarrow$ <strong>Mandibular N. (V3)</strong>
-                    </p>
-                    <p><strong>Pharynx Motor:</strong>
-                        <br>All muscles by <strong>Pharyngeal Plexus (CN X)</strong>...
-                        <br><em>EXCEPT</em> <strong>Stylopharyngeus</strong> $\rightarrow$ <strong>Glossopharyngeal N. (CN IX)</strong>
-                    </p>
+                    <h3 class="text-xl font-semibold dr-subtitle mt-4">High-Level Comparison</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Small Intestine</th>
+                                <th>Large Intestine</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Size</strong></td>
+                                <td>~6.25 meters (20 feet) long, thinner tube.</td>
+                                <td>~1.5 - 1.8 meters (5-6 feet) long, thicker tube.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Parts</strong></td>
+                                <td>Duodenum, jejunum, and ileum.</td>
+                                <td>Caecum, colon, and rectum.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Function</strong></td>
+                                <td>Digests fat, protein, and carbohydrates.</td>
+                                <td>Absorbs water and electrolytes from undigested food.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </details>
             
-            <details class="mt-4">
-                <summary>⚡️ Quick Recall: Tongue Innervation</summary>
-                <div class="details-content">
-                    <div class="overflow-x-auto">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Region</th>
-                                    <th>Sensation</th>
-                                    <th>Taste</th>
-                                    <th>Motor</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Anterior 2/3</strong></td>
-                                    <td>Lingual N. (V3)</td>
-                                    <td>Chorda Tympani (VII)</td>
-                                    <td>Hypoglossal (XII)</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Posterior 1/3</strong></td>
-                                    <td>Glossopharyngeal (IX)</td>
-                                    <td>Glossopharyngeal (IX)</td>
-                                    <td>Hypoglossal (XII)</td>
-                                </tr>
-                                <tr>
-                                    <td><em>Exception</em></td>
-                                    <td>---</td>
-                                    <td>---</td>
-                                    <td><strong>Palatoglossus:</strong> Vagus (X)</td>
-                                </tr>
-                            </tbody>
-                        </table>
+            [Image of the parts of the small intestine: duodenum, jejunum, ileum]
+
+            <details class="mb-6" open>
+                <summary>II. The Small Intestine (الأمعاء الدقيقة)</summary>
+                <div class="details-content space-y-4">
+                    <p class="text-lg">The small intestine is the longest part of the digestive system (~6 meters), extending from the pylorus to the cecum. Its main functions are to complete digestion and absorb nutrients.</p>
+                    
+                    <h3 class="text-2xl font-semibold dr-subtitle mt-4 border-b pb-2">A. Duodenum (الاثنا عشر)</h3>
+                    <p>The shortest (10 inches), widest part, C-shaped around the pancreatic head. It begins at the pyloroduodenal junction and ends at the duodenojejunal flexure.</p>
+
+                    
+
+                    <h4 class="text-xl font-semibold text-gray-700 mt-4">1. First Part (Superior)</h4>
+                    <ul class="list-disc list-inside">
+                        <li><strong>Size:</strong> 2 inches (5 cm). First 2 cm are mobile (duodenal cap).</li>
+                        <li><strong>Course:</strong> Upward and backward at L1.</li>
+                        <li><strong>Relations:</strong>
+                            <ul class="list-disc list-inside ml-6 mt-1">
+                                <li><strong>Anterior:</strong> Quadrate lobe of liver, gallbladder.</li>
+                                <li><strong>Posterior:</strong> Lesser sac, Gastro-duodenal artery, bile duct, portal vein, IVC.</li>
+                                <li><strong>Superior:</strong> Epiploic foramen, lesser omentum.</li>
+                                <li><strong>Inferior:</strong> Head of pancreas.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4 class="text-xl font-semibold text-gray-700 mt-4">2. Second Part (Descending)</h4>
+                    <ul class="list-disc list-inside">
+                        <li><strong>Size:</strong> 3 inches (7.5 cm).</li>
+                        <li><strong>Course:</strong> Descends vertically (L2-L3).</li>
+                        <li><strong>Key Features:</strong>
+                            <ul class="list-disc list-inside ml-6 mt-1">
+                                <li>Receives Bile Duct & Main Pancreatic Duct at the <strong>Major Duodenal Papilla</strong>.</li>
+                                <li>Accessory Pancreatic Duct (if present) opens at the <strong>Minor Duodenal Papilla</strong>.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Relations:</strong>
+                            <ul class="list-disc list-inside ml-6 mt-1">
+                                <li><strong>Anterior:</strong> Gallbladder, R. lobe of liver, transverse colon.</li>
+                                <li><strong>Posterior:</strong> R. kidney hilum, R. ureter, R. renal vessels, IVC, R. psoas.</li>
+                                <li><strong>Medial:</strong> Head of pancreas, bile duct.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4 class="text-xl font-semibold text-gray-700 mt-4">3. Third Part (Horizontal)</h4>
+                    <ul class="list-disc list-inside">
+                        <li><strong>Size:</strong> 4 inches (10 cm).</li>
+                        <li><strong>Course:</strong> Horizontally to the left at L3.</li>
+                        <li><strong>Relations:</strong>
+                            <ul class="list-disc list-inside ml-6 mt-1">
+                                <li><strong>Anterior:</strong> Root of mesentery, <strong>Superior Mesenteric Vessels (SMA & SMV)</strong>.</li>
+                                <li><strong>Posterior:</strong> R. psoas, IVC, aorta.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4 class="text-xl font-semibold text-gray-700 mt-4">4. Fourth Part (Ascending)</h4>
+                    <ul class="list-disc list-inside">
+                        <li><strong>Size:</strong> 1 inch (2.5 cm).</li>
+                        <li><strong>Course:</strong> Upward and left to the Duodenojejunal Flexure.</li>
+                        <li><strong>Key Feature:</strong> Held by the <strong>Ligament of Treitz</strong>.
+                            <br><strong>الشرح بالعربي:</strong> <span class="dr-arabic">يُعتبر "رباط ترايتز" علامة تشريحية هامة جداً، حيث يفصل بين الجهاز الهضمي العلوي والسفلي، وهو نقطة التعليق التي تثبت نهاية الاثنا عشر.</span>
+                        </li>
+                        <li><strong>Relations:</strong>
+                            <ul class="list-disc list-inside ml-6 mt-1">
+                                <li><strong>Posterior:</strong> Left margin of aorta, L. psoas muscle.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4 class="text-xl font-semibold text-gray-700 mt-4">Vascular & Nerve Supply of Duodenum</h4>
+                    [Image of the blood supply to the duodenum from celiac trunk and SMA]
+                    <ul class="list-disc list-inside">
+                        <li><strong>Arterial Supply:</strong> Dual supply (Watershed area).
+                            <ul class="list-disc list-inside ml-6 mt-1">
+                                <li><strong>Upper Half (Foregut):</strong> Superior Pancreatico-duodenal a. (from Celiac Trunk).</li>
+                                <li><strong>Lower Half (Midgut):</strong> Inferior Pancreatico-duodenal a. (from SMA).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Venous Drainage:</strong> Superior vein $\rightarrow$ Portal Vein; Inferior vein $\rightarrow$ SMV.</li>
+                        <li><strong>Nerve Supply:</strong> Celiac and SMA plexuses (Vagus).</li>
+                    </ul>
+
+                    <hr class="my-6">
+
+                    <h3 class="text-2xl font-semibold dr-subtitle mt-4 border-b pb-2">B. Jejunum and Ileum (الصائم واللفائفي)</h3>
+                    <p>Mobile, coiled parts (~6 meters) attached by the Mesentery. Jejunum is the upper 2/5; Ileum is the lower 3/5.</p>
+                    
+                    <h4 class="text-xl font-semibold text-gray-700 mt-4">Key Differences: Jejunum vs. Ileum</h4>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Jejunum (Proximal 2/5)</th>
+                                <th>Ileum (Distal 3/5)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Location</strong></td>
+                                <td>L. side of abdomen + umbilical region.</td>
+                                <td>Hypogastric region + R. iliac fossa.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wall</strong></td>
+                                <td>Wide and <strong>thick-walled</strong>.</td>
+                                <td>Narrow and <strong>thin-walled</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Vasa Recta</strong></td>
+                                <td><strong>Long</strong> vasa recta.</td>
+                                <td><strong>Short</strong> vasa recta.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Arcades</strong></td>
+                                <td><strong>Simple</strong> (1-2 rows).</td>
+                                <td><strong>Complicated</strong> (3-4+ rows).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mesentery</strong></td>
+                                <td>Less fat; "windows" (translucent).</td>
+                                <td>More fat; fat encroaches.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Lymphoid</strong></td>
+                                <td>Solitary follicles.</td>
+                                <td><strong>Peyer's Patches</strong>.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>الشرح بالعربي:</strong> <span class="dr-arabic">الفروقات واضحة: <strong>الصائم (Jejunum)</strong> "أغنى وأسمك" (جدار سميك، أوعية دموية طويلة ومباشرة، دهون قليلة). <strong>اللفائفي (Ileum)</strong> "أفقر وأنحف" (جدار رقيق، أوعية دموية قصيرة ومعقدة، دهون كثيرة، ويحتوي على "بقع باير" المناعية).</span></p>
+                
+                    <h4 class="text-xl font-semibold text-gray-700 mt-4">Vascular & Nerve Supply of Jejunum & Ileum</h4>
+                    <ul class="list-disc list-inside">
+                        <li><strong>Arterial Supply:</strong> Branches of the <strong>SMA</strong>.</li>
+                        <li><strong>Venous Drainage:</strong> Drains into the <strong>SMV</strong>.</li>
+                        <li><strong>Nerve Supply:</strong> Superior Mesenteric Plexus (Vagus).</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="mb-6" open>
+                <summary>III. The Large Intestine (الأمعاء الغليظة)</summary>
+                <div class="details-content space-y-4">
+                    <p class="text-lg">Extends 1.5 meters from the ileocecal junction to the anus. Absorbs water and electrolytes.</p>
+                    <h3 class="text-2xl font-semibold dr-subtitle mt-4 border-b pb-2">Key Characteristics</h3>
+                    <p>Features <strong>NOT</strong> found in the Rectum or Anal Canal:</p>
+                    
+                    <ul class="list-decimal list-inside">
+                        <li><strong>Teniae Coli (الأشرطة القولونية):</strong> Three longitudinal muscle bands.</li>
+                        <li><strong>Sacculations (Haustra) (التقببات):</strong> Pouches caused by the shorter teniae.</li>
+                        <li><strong>Epiploic Appendices (الزوائد الثربية):</strong> Peritoneal folds filled with fat.</li>
+                    </ul>
+
+                    <h3 class="text-2xl font-semibold dr-subtitle mt-4 border-b pb-2">A. Cecum (الأعور)</h3>
+                    <ul class="list-disc list-inside">
+                        <li><strong>Description:</strong> A blind pouch in the right iliac fossa. It is **intraperitoneal**.</li>
+                        <li><strong>Ileocolic Junction:</strong> Terminal ileum opens at the <strong>ileal papilla</strong>, which has folds to prevent reflux.</li>
+                        <li><strong>Blood Supply:</strong> Cecal Arteries (from Ileocolic Artery, branch of SMA).</li>
+                    </ul>
+
+                    <h3 class="text-2xl font-semibold dr-subtitle mt-4 border-b pb-2">B. Vermiform Appendix (الزائدة الدودية)</h3>
+                    [Image of the common positions of the appendix]
+                    <ul class="list-disc list-inside">
+                        <li><strong>Description:</strong> 8-12 cm blind lymphoid pouch. Arises from the posteromedial cecum, 2 cm below the ileocecal valve. Has a **meso-appendix**.</li>
+                        <li><strong>Common Positions:</strong>
+                            <ul class="list-disc list-inside ml-6 mt-1">
+                                <li><strong>Retrocecal (64%)</strong></li>
+                                <li><strong>Pelvic (32%)</strong></li>
+                                <li>Subcecal (2%), Preileal (1%), Postileal (0.5%)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Blood Supply:</strong> <strong>Appendicular Artery</strong> (from Ileocolic Artery) in the meso-appendix.</li>
+                    </ul>
+
+                    <h3 class="text-2xl font-semibold dr-subtitle mt-4 border-b pb-2">C. Colon (القولون)</h3>
+                    [Image of the blood supply of the colon from SMA and IMA]
+                    <h4 class="text-xl font-semibold text-gray-700 mt-4">1. Ascending Colon</h4>
+                    <ul class="list-disc list-inside">
+                        <li><strong>Course:</strong> Cecum to Right Colic (Hepatic) Flexure.</li>
+                        <li><strong>Peritoneum:</strong> <strong>Retroperitoneal</strong> (fixed).</li>
+                        <li><strong>Posterior Relations:</strong> R. Kidney, Quadratus Lumborum, Transversus Abdominis.</li>
+                        <li><strong>Blood Supply:</strong> Ileocolic & Right Colic a. (from <strong>SMA</strong>).</li>
+                        <li><strong>Nerve Supply:</strong> SMA Plexus (<strong>Vagus</strong>).</li>
+                    </ul>
+
+                    <h4 class="text-xl font-semibold text-gray-700 mt-4">2. Transverse Colon</h4>
+                    <ul class="list-disc list-inside">
+                        <li><strong>Course:</strong> Hepatic Flexure to Splenic Flexure.</li>
+                        <li><strong>Peritoneum:</strong> <strong>Intraperitoneal</strong> (mobile). Has **Transverse Mesocolon**.</li>
+                        <li><strong>Key Feature:</strong> Left (Splenic) Flexure is higher and attached to diaphragm by the <strong>phrenicocolic ligament</strong>.</li>
+                        <li><strong>Posterior Relations:</strong> Duodenum (Part 2), Head of Pancreas.</li>
+                        <li><strong>Blood Supply (Watershed):</strong>
+                            <ul class="list-disc list-inside ml-6 mt-1">
+                                <li><strong>Proximal 2/3 (Midgut):</strong> Middle Colic a. (from <strong>SMA</strong>).</li>
+                                <li><strong>Distal 1/3 (Hindgut):</strong> Left Colic a. (from <strong>IMA</strong>).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Nerve Supply (Watershed):</strong>
+                            <ul class="list-disc list-inside ml-6 mt-1">
+                                <li><strong>Proximal 2/3:</strong> SMA Plexus (<strong>Vagus</strong>).</li>
+                                <li><strong>Distal 1/3:</strong> IMA Plexus (<strong>Pelvic Splanchnic Nerves, S2-S4</strong>).</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4 class="text-xl font-semibold text-gray-700 mt-4">3. Descending Colon</h4>
+                    <ul class="list-disc list-inside">
+                        <li><strong>Course:</strong> Splenic Flexure to iliac crest.</li>
+                        <li><strong>Peritoneum:</strong> <strong>Retroperitoneal</strong> (fixed).</li>
+                        <li><strong>Posterior Relations:</strong> L. Kidney, L. psoas, iliacus.</li>
+                        <li><strong>Blood Supply:</strong> Left Colic & Sigmoid a. (from <strong>IMA</strong>).</li>
+                        <li><strong>Nerve Supply:</strong> IMA Plexus (<strong>Pelvic Splanchnic Nerves</strong>).</li>
+                    </ul>
+
+                    <h4 class="text-xl font-semibold text-gray-700 mt-4">4. Sigmoid Colon</h4>
+                    <ul class="list-disc list-inside">
+                        <li><strong>Course:</strong> Pelvic brim to S3 vertebra.</li>
+                        <li><strong>Peritoneum:</strong> <strong>Intraperitoneal</strong> (mobile). Has **Sigmoid Mesocolon**.</li>
+                        <li><strong>Anterior Relations (Male):</strong> Urinary bladder.</li>
+                        <li><strong>Anterior Relations (Female):</strong> Uterus, upper vagina.</li>
+                        <li><strong>Blood Supply:</strong> Sigmoid a. (from <strong>IMA</strong>).</li>
+                        <li><strong>Nerve Supply:</strong> Inferior Hypogastric Plexuses.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="mb-6" open>
+                <summary>D. Rectum (المستقيم)</summary>
+                <div class="details-content space-y-4">
+                    <p class="text-lg">Distal segment, stores faeces. **LACKS** Teniae Coli, Haustra, and Epiploic Appendices.</p>
+                    <ul class="list-disc list-inside">
+                        <li><strong>Begins:</strong> Recto-sigmoid junction at **S3 vertebra**.</li>
+                        <li><strong>Ends:</strong> Ano-rectal junction.</li>
+                        <li><strong>Features:</strong> Dilated lower 1/3 is the **Ampulla**. Has 3 internal permanent folds: **Valves of Houston**.</li>
+                    </ul>
+
+                    <h4 class="text-xl font-semibold text-gray-700 mt-4">Peritoneal Coverings</h4>
+                    <ul class="list-disc list-inside">
+                        <li><strong>Upper 1/3:</strong> Covered front & sides.</li>
+                        <li><strong>Middle 1/3:</strong> Covered **only** in front.</li>
+                        <li><strong>Lower 1/3:</strong> **Not covered** by peritoneum.</li>
+                    </ul>
+
+                    <h4 class="text-xl font-semibold text-gray-700 mt-4">Anterior Relations</h4>
+                    <ul class="list-disc list-inside">
+                        <li><strong>Male:</strong> Rectovesical pouch. Lower 1/3 relates to bladder base, seminal vesicles, & prostate.</li>
+                        <li><strong>Female:</strong> Recto-uterine pouch (of Douglas). Lower 1/3 relates to the lower vagina.</li>
+                    </ul>
+                    
+                    <h4 class="text-xl font-semibold text-gray-700 mt-4">Vascular & Nerve Supply of Rectum</h4>
+                    
+                    <ul class="list-disc list-inside">
+                        <li><strong>Arterial Supply:</strong> 5 arteries.
+                            <ol class="list-decimal list-inside ml-6 mt-1">
+                                <li><strong>Superior Rectal a. (1):</strong> Main supply, from <strong>IMA</strong>.</li>
+                                <li><strong>Middle Rectal a. (2):</strong> From <strong>Internal Iliac a.</strong></li>
+                                <li><strong>Inferior Rectal a. (2):</strong> From <strong>Internal Pudendal a.</strong></li>
+                            </ol>
+                        </li>
+                        <li><strong>Venous Drainage (Porto-Systemic Anastomosis):</strong>
+                            
+                            <ul class="list-disc list-inside ml-6 mt-1">
+                                <li><strong>Superior Rectal v.</strong> $\rightarrow$ IMV $\rightarrow$ **Portal System**.</li>
+                                <li><strong>Middle & Inferior Rectal v.</strong> $\rightarrow$ Internal Iliac/Pudendal $\rightarrow$ **Systemic (Caval) System**.</li>
+                            </ul>
+                            <strong>الشرح بالعربي:</strong> <span class="dr-arabic">هذا الاتصال بين الجهاز البابي (Portal) والجهاز الجهازي (Systemic) هو "تحويلة" طبيعية. إذا حدث ارتفاع في ضغط الدم البابي (مثل تليف الكبد)، يمكن أن يتضخم هذا الوريد مسبباً البواسير (Hemorrhoids).</span>
+                        </li>
+                        <li><strong>Lymph Drainage (Watershed):</strong>
+                            <ul class="list-disc list-inside ml-6 mt-1">
+                                <li><strong>Upper 1/2:</strong> Drains **Up** to **Inferior Mesenteric Nodes**.</li>
+                                <li><strong>Lower 1/2:</strong> Drains **Laterally** to **Internal Iliac Nodes**.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Nerve Supply:</strong> Sympathetic (L1-L2) & Parasympathetic (S2-S4, Pelvic Splanchnic).</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+
+        <!-- Spacer -->
+        <hr class="my-12 border-gray-300">
+
+        <!-- 
+            ==================================================
+            SECTION 2: MEMORY COMPRESSION
+            ================================================== 
+        -->
+        <section id="memory" class="mb-12">
+            <h2 class="text-3xl font-bold dr-title mb-6">II. Memory Compression (High-Yield Summary)</h2>
+            
+            <details class="mb-6" open>
+                <summary>Key Comparisons & Structures</summary>
+                <div class="details-content space-y-6">
+                    
+                    <h3 class="text-xl font-semibold dr-subtitle">Table 1: Small vs. Large Intestine</h3>
+                    <table>
+                        <thead>
+                            <tr><th>Feature</th><th>Small Intestine</th><th>Large Intestine</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Function</strong></td><td>Digestion & Nutrient Absorption</td><td>Water & Electrolyte Absorption</td></tr>
+                            <tr><td><strong>Features</strong></td><td>Plicae Circulares, Villi</td><td><strong>Teniae Coli, Haustra, Epiploic Appendices</strong></td></tr>
+                            <tr><td><strong>Mobility</strong></td><td>Duodenum (fixed), Jejunum/Ileum (mobile)</td><td>Ascending/Descending (fixed), Transverse/Sigmoid (mobile)</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="text-xl font-semibold dr-subtitle">Table 2: Jejunum vs. Ileum</h3>
+                    <table>
+                        <thead>
+                            <tr><th>Feature</th><th>Jejunum (Proximal 2/5)</th><th>Ileum (Distal 3/5)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Wall</strong></td><td><strong>Thick</strong>, Wide, More Plicae</td><td><strong>Thin</strong>, Narrow, Less Plicae</td></tr>
+                            <tr><td><strong>Vasa Recta</strong></td><td><strong>Long</strong> & Few</td><td><strong>Short</strong> & Many</td></tr>
+                            <tr><td><strong>Arcades</strong></td><td><strong>Simple</strong> (1-2 rows)</td><td><strong>Complex</strong> (3-4+ rows)</td></tr>
+                            <tr><td><strong>Mesenteric Fat</strong></td><td><strong>Less Fat</strong> ("Windows")</td><td><strong>More Fat</strong> ("Encroaching")</td></tr>
+                            <tr><td><strong>Lymphoid</strong></td><td>Solitary Nodes</td><td><strong>Peyer's Patches</strong></td></tr>
+                            <tr><td><strong>Arabic (للتذكرة)</strong></td><td><strong>(الصائم)</strong> "أغنى وأسمك"</td><td><strong>(اللفائفي)</strong> "أفقر وأنحف"</td></tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3 class="text-xl font-semibold dr-subtitle">Key Structures & Mnemonics</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Duodenum (Part 3):</strong> Crossed *anteriorly* by the <strong>SMA & SMV</strong>.</li>
+                        <li><strong>Duodenum (Part 4):</strong> Held by the <strong>Ligament of Treitz</strong> (divides Upper/Lower GI bleed).</li>
+                        <li><strong>Mnemonic (Colon Features): "THE"</strong>
+                            <ul class="list-disc list-inside ml-6 mt-1">
+                                <li><strong>T:</strong> <strong>T</strong>eniae Coli</li>
+                                <li><strong>H:</strong> <strong>H</strong>austra</li>
+                                <li><strong>E:</strong> <strong>E</strong>piploic Appendices</li>
+                            </ul>
+                        </li>
+                        <li><strong>Appendix Position:</strong> Most common is **Retrocecal (64%)**.</li>
+                        <li><strong>Rectum:</strong> **LACKS** Teniae Coli, Haustra, & Epiploic Appendices.</li>
+                        <li><strong>Rectum Lymph:</strong> Upper 1/2 $\rightarrow$ **IMA Nodes**. Lower 1/2 $\rightarrow$ **Internal Iliac Nodes**.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="mb-6" open>
+                <summary>Vascular & Nerve Watersheds (Critical Concept)</summary>
+                <div class="details-content space-y-6">
+                    <h3 class="text-xl font-semibold dr-subtitle">Arterial Watersheds (مناطق التقاء الإمداد الدموي)</h3>
+                    <table>
+                        <thead>
+                            <tr><th>Junction</th><th>Location</th><th>Artery 1 (Proximal)</th><th>Artery 2 (Distal)</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Junction 1</strong></td>
+                                <td><strong>Duodenum (Part 2)</strong></td>
+                                <td><strong>Celiac Trunk</strong></td>
+                                <td><strong>Superior Mesenteric (SMA)</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Junction 2</strong></td>
+                                <td><strong>Transverse Colon (Distal 1/3)</strong></td>
+                                <td><strong>Superior Mesenteric (SMA)</strong></td>
+                                <td><strong>Inferior Mesenteric (IMA)</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Junction 3</strong></td>
+                                <td><strong>Rectum</strong></td>
+                                <td><strong>Inferior Mesenteric (IMA)</strong></td>
+                                <td><strong>Internal Iliac Artery</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 class="text-xl font-semibold dr-subtitle">Parasympathetic Nerve Watershed (التقاء الأعصاب)</h3>
+                    <table>
+                        <thead>
+                            <tr><th>Nerve</th><th>Origin</th><th>Structures Supplied (The "Cut-off Point")</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Vagus Nerve (CN X)</strong></td>
+                                <td>(Cranial)</td>
+                                <td><strong>ENTIRE TRACT</strong> *down to* the **Distal 1/3 of the Transverse Colon**.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pelvic Splanchnic N.</strong></td>
+                                <td>(S2, S3, S4)</td>
+                                <td><strong>STARTS AT</strong> the **Distal 1/3 of the Transverse Colon** (supplies the rest).</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="dr-summary p-4">
+                        <p><strong>Key Takeaway:</strong> The watershed for both blood (SMA/IMA) and parasympathetic nerves (Vagus/Pelvic Splanchnic) occurs at the same place: the **Splenic Flexure / Distal Transverse Colon**. This is a critical high-yield concept.</p>
                     </div>
                 </div>
             </details>
 
-            <details class="mt-4">
-                <summary>⚡️ Quick Recall: Esophageal Constrictions</summary>
-                <div class="details-content">
-                    <ul class="list-disc list-outside ml-6 space-y-1 font-medium">
-                        <li><strong>C6:</strong> Pharyngoesophageal junction (<strong>Narrowest</strong>)</li>
-                        <li><strong>T3:</strong> Arch of Aorta</li>
-                        <li><strong>T6:</strong> Left Main Bronchus</li>
-<li><strong>T10:</strong> Diaphragmatic Hiatus</li>
-                    </ul>
-                </div>
-            </details>
-
-            <details class="mt-4">
-                <summary>⚡️ Mnemonic: Stomach Arterial Supply (from Celiac Trunk)</summary>
-                <div class="details-content">
-                    <ul class="list-disc list-outside ml-6 space-y-1">
-                        <li><strong>Lesser Curvature:</strong> <strong>Left Gastric</strong> (from Celiac) + <strong>Right Gastric</strong> (from Hepatic).</li>
-                        <li><strong>Greater Curvature:</strong> <strong>Left Gastroepiploic</strong> (from Splenic) + <strong>Right Gastroepiploic</strong> (from Gastroduodenal).</li>
-                        <li><strong>Fundus:</strong> <strong>Short Gastrics</strong> (from Splenic).</li>
-                    </ul>
-                </div>
-            </details>
         </section>
 
-        <!-- === STAGE 3: CLINICAL APPLICATION === -->
-        <section id="stage3" class="my-8">
-            <h2 class="text-3xl font-bold academic-title border-b-2 border-gray-300 pb-2">🩺 3.0 Clinical Application Layer (#Stage_Clinical)</h2>
-            <p class="mt-2 text-lg text-gray-600">Applying anatomical knowledge to clinical reasoning.</p>
+        <!-- Spacer -->
+        <hr class="my-12 border-gray-300">
 
-            <details class="mt-4">
-                <summary>Case 1: The Deviated Tongue (CN XII Lesion)</summary>
-                <div class="details-content space-y-2">
-                    <p><span class="case-label">Presentation:</span> <span class="case-content">Patient's tongue <strong>deviates to the right</strong> upon protrusion after right-sided neck surgery.</span></p>
-                    <p><span class="case-label">Anatomy:</span> <span class="case-content">Protrusion is a function of the <strong>Genioglossus</strong> muscle, innervated by the <strong>Hypoglossal N. (CN XII)</strong>.</span></p>
-                    <p><span class="case-label">Reasoning:</span> <span class="case-content">The right CN XII was damaged. The healthy left Genioglossus <em>pushes</em> the tongue unopposed, causing deviation <strong>TOWARDS</strong> the paralyzed side.</span></p>
-                    <p><span class="case-label">Learning Point:</span> <span class="case-content" style="color: #FF6B6B; font-weight: 600;">Tongue deviates <strong>TOWARD</strong> the side of a CN XII lesion.</span></p>
-                </div>
-            </details>
+        <!-- 
+            ==================================================
+            SECTION 3: CLINICAL APPLICATION
+            ================================================== 
+        -->
+        <section id="clinical" class="mb-12">
+            <h2 class="text-3xl font-bold dr-title mb-6">III. Clinical Application (Patient Cases)</h2>
 
-            <details class="mt-4">
-                <summary>Case 2: Nasal Regurgitation (CN X Lesion)</summary>
-                <div class="details-content space-y-2">
-                    <p><span class="case-label">Presentation:</span> <span class="case-content">Patient reports water coming from the nose when drinking; uvula <strong>deviates to the left</strong>.</span></p>
-                    <p><span class="case-label">Anatomy:</span> <span class="case-content">The <strong>Levator Veli Palatini</strong> (motor nerve: <strong>Vagus N. - CN X</strong>) elevates the soft palate to seal the nasopharynx during swallowing.</span></p>
-                    <p><span class="case-label">Reasoning:</span> <span class="case-content">A right-sided Vagus nerve lesion paralyzes the right soft palate. The healthy left side pulls the uvula <strong>AWAY</strong> from the lesion. The failed seal causes nasal regurgitation.</span></p>
-                    <p><span class="case-label">Learning Point:</span> <span class="case-content" style="color: #FF6B6B; font-weight: 600;">Uvula deviates <strong>AWAY</strong> from the side of a CN X lesion.</span></p>
+            <!-- Case 1: Appendicitis -->
+            <div class="dr-clinical-case">
+                <div class="dr-clinical-header">
+                    <h3 class="text-2xl dr-clinical-title">Case 1: Classic Acute Appendicitis</h3>
                 </div>
-            </details>
+                <div class="dr-clinical-body space-y-4">
+                    <p><strong>🧍 Patient:</strong> 19-year-old male student.</p>
+                    <p><strong>🩺 Complaint:</strong> "My stomach pain moved."</p>
+                    <p><strong>📖 History:</strong> Began as a dull, achy pain around the **umbilicus**. Over 4 hours, it became a sharp, constant pain in the **right lower quadrant (RLQ)**.</p>
+                    <p><strong>🔍 Exam:</strong> Maximal tenderness at **McBurney's point**. Rebound tenderness in RLQ.</p>
+                    
+                    <h4 class="text-lg font-semibold dr-subtitle">🧠 Anatomical Interpretation</h4>
+                    <p>This "migrating pain" is a direct result of dual nerve supply:</p>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li><strong>Initial Visceral Pain:</strong> The appendix (a midgut structure) refers pain to the **T10 dermatome** (the umbilicus) via the Superior Mesenteric Plexus.
+                            <br><span class="dr-arabic"><strong>الشرح:</strong> الألم المبدئي "الحشوي" يكون حول السرة (T10).</span>
+                        </li>
+                        <li><strong>Later Parietal Pain:</strong> The inflamed appendix irritates the **parietal peritoneum** (supplied by somatic nerves), causing sharp, localized pain in the RLQ.
+                            <br><span class="dr-arabic"><strong>الشرح:</strong> الألم المتأخر "الجسدي" يكون في مكان الالتهاب الفعلي.</span>
+                        </li>
+                    </ol>
+                    <p class="dr-summary p-4"><strong>💡 Key Learning Point:</strong> The lecture notes the most common appendix position is **Retrocecal (64%)**. A retrocecal appendix might cause flank pain instead of classic RLQ pain.</p>
+                </div>
+            </div>
 
-            <details class="mt-4">
-                <summary>Case 3: The Lodged Coin (Esophageal Constrictions)</summary>
-                <div class="details-content space-y-2">
-                    <p><span class="case-label">Presentation:</span> <span class="case-content">A child swallows a coin and experiences acute dysphagia (difficulty swallowing).</span></p>
-                    <p><span class="case-label">Anatomy:</span> <span class="case-content">Foreign bodies lodge at the 4 anatomical constrictions. The <strong>narrowest</strong> point is the <strong>1st constriction</strong> (pharyngoesophageal junction) at <strong>C6</strong>.</span></p>
-                    <p><span class="case-label">Learning Point:</span> <span class="case-content" style="color: #FF6B6B; font-weight: 600;">The anatomical constrictions (C6, T3, T6, T10) are clinically significant sites for impaction.</span></p>
+            <!-- Case 2: Ischemic Colitis -->
+            <div class="dr-clinical-case">
+                <div class="dr-clinical-header">
+                    <h3 class="text-2xl dr-clinical-title">Case 2: Ischemic Colitis (Watershed Area)</h3>
                 </div>
-            </details>
+                <div class="dr-clinical-body space-y-4">
+                    <p><strong>🧍 Patient:</strong> 72-year-old male with vascular disease.</p>
+                    <p><strong>🩺 Complaint:</strong> Sudden, cramping left-sided abdominal pain and bloody diarrhea.</p>
+                    <p><strong>🔍 Exam:</strong> Tenderness over the **Splenic Flexure**. CT shows reduced blood flow at the junction of the transverse and descending colon.</p>
+                    
+                    <h4 class="text-lg font-semibold dr-subtitle">🧠 Anatomical Interpretation</h4>
+                    <p>This is classic ischemia at a "watershed area":</p>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li><strong>The Watershed:</strong> The **splenic flexure** is the critical junction between the territory of the **Superior Mesenteric Artery (SMA)** and the **Inferior Mesenteric Artery (IMA)**.</li>
+                        <li><strong>Pathophysiology:</strong> In a patient with low blood pressure and atherosclerosis (تصلب الشرايين), this area is the most vulnerable to ischemia (lack of blood) because it is the furthest point from both main arteries. This causes tissue death and bleeding.</li>
+                    </ol>
+                    <p class="dr-summary p-4"><strong>💡 Key Learning Point:</strong> This "watershed" point at the splenic flexure also applies to the parasympathetic nerves (**Vagus** vs. **Pelvic Splanchnic**).</p>
+                </div>
+            </div>
+            
+            <!-- Case 3: Duodenal Ulcer -->
+            <div class="dr-clinical-case">
+                <div class="dr-clinical-header">
+                    <h3 class="text-2xl dr-clinical-title">Case 3: Bleeding Duodenal Ulcer</h3>
+                </div>
+                <div class="dr-clinical-body space-y-4">
+                    <p><strong>🧍 Patient:</strong> 55-year-old male using chronic NSAIDs.</p>
+                    <p><strong>🩺 Complaint:</strong> Vomiting "coffee grounds" and black, tarry stools (melena).</p>
+                    <p><strong>🔍 Exam:</strong> Endoscopy shows a large ulcer on the **posterior wall of the 1st part of the duodenum** with an actively bleeding artery.</p>
+                    
+                    <h4 class="text-lg font-semibold dr-subtitle">🧠 Anatomical Interpretation</h4>
+                    <p>This is a life-threatening bleed due to a specific anatomical relationship:</p>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li><strong>Location:</strong> The **1st part of the duodenum** is a common site for ulcers.</li>
+                        <li><strong>Posterior Relation:</strong> The lecture identifies that the **Gastroduodenal Artery** runs directly posterior to this part of the duodenum.</li>
+                        <li><strong>Pathophysiology:</strong> The ulcer has eroded through the duodenal wall and into this major artery, causing a massive hemorrhage.</li>
+                    </ol>
+                    <p class="dr-summary p-4"><strong>💡 Key Learning Point:</strong> The posterior relations of the 1st part of the duodenum (Gastroduodenal Artery) are clinically critical. An ulcer on the 3rd part could cause **SMA Syndrome** (compression by the SMA against the Aorta).</p>
+                </div>
+            </div>
 
-            <details class="mt-4">
-                <summary>Case 4: The Penetrating Ulcer (Stomach Bed)</summary>
-                <div class="details-content space-y-2">
-                    <p><span class="case-label">Presentation:</span> <span class="case-content">Patient with a known gastric ulcer develops new, severe pain "boring" straight to his back.</span></p>
-                    <p><span class="case-label">Anatomy:</span> <span class="case-content">The posterior wall of the stomach ("Stomach Bed") is directly anterior to the <strong>Pancreas</strong> and the <strong>Splenic Artery</strong>.</span></p>
-                    <p><span class="case-label">Reasoning:</span> <span class="case-content">The ulcer has likely penetrated the posterior stomach wall and is irritating/eroding the <strong>Pancreas</strong> (causing the referred back pain).</span></p>
-                    <p><span class="case-label">Major Risk:</span> <span class="case-content" style="color: #D90429; font-weight: 600;">Erosion into the <strong>Splenic Artery</strong>, causing massive, life-threatening hemorrhage.</span></p>
-                    <p><span class="case-label">Learning Point:</span> <span class="case-content" style="color: #FF6B6B; font-weight: 600;">The stomach's posterior relations (Pancreas, Splenic Artery) are critical in peptic ulcer disease.</span></p>
+            <!-- Case 4: Portal Hypertension -->
+            <div class="dr-clinical-case">
+                <div class="dr-clinical-header">
+                    <h3 class="text-2xl dr-clinical-title">Case 4: Portal Hypertension & Hemorrhoids</h3>
                 </div>
-            </details>
+                <div class="dr-clinical-body space-y-4">
+                    <p><strong>🧍 Patient:</strong> 60-year-old female with liver cirrhosis (تليف الكبد).</p>
+                    <p><strong>🩺 Complaint:</strong> Painless, bright red rectal bleeding.</p>
+                    <p><strong>🔍 Exam:</strong> Jaundice, ascites, and large **internal hemorrhoids** on anoscopy.</p>
+                    [Image of portal hypertension causing hemorrhoids]
+                    <h4 class="text-lg font-semibold dr-subtitle">🧠 Anatomical Interpretation</h4>
+                    <p>This is a direct consequence of the **Porto-Systemic Anastomosis** in the rectum:</p>
+                    <ol class="list-decimal list-inside space-y-2">
+                        <li><strong>Portal Hypertension:</strong> The scarred liver (cirrhosis) blocks blood flow from the **Portal Vein**, causing pressure to back up.</li>
+                        <li><strong>The Anastomosis:</strong> The rectum is a key meeting point.
+                            <ul class="list-disc list-inside ml-6 mt-1">
+                                <li>**Portal System:** **Superior Rectal Vein** (drains to IMV $\rightarrow$ Portal Vein).</li>
+                                <li>**Systemic System:** **Middle & Inferior Rectal Veins** (drains to Internal Iliac $\rightarrow$ IVC).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Pathophysiology:</strong> Portal blood "re-routes" backward from the Superior Rectal Vein into the Systemic veins, causing them to dilate and form hemorrhoids (varices).</li>
+                    </ol>
+                    <p class="dr-summary p-4"><strong>💡 Key Learning Point:</strong> The key high-yield fact is this porto-systemic connection. A similar dual pathway exists for lymph (Upper 1/2 $\rightarrow$ IMA Nodes; Lower 1/2 $\rightarrow$ Internal Iliac Nodes), which is critical for cancer staging.</p>
+                </div>
+            </div>
 
         </section>
 
-        <!-- === FOOTER === -->
-        <footer class="mt-12 pt-6 border-t-2 border-gray-300 text-center text-gray-500">
-            <p>&copy; Doctor NINyawe AI Academic Compendium. All content processed and structured for educational purposes.</p>
-            <p>Model Identity: Multi-Agent Cognitive Architecture (Biomedical Knowledge Engineering).</p>
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-sm mt-12 py-4 border-t">
+            <p>eBook generated by Doctor NINyawe Model | All content derived from source lecture.</p>
         </footer>
 
     </div>
-
 </body>
 </html>
